@@ -1,0 +1,79 @@
+#tilapia_karawang
+install.packages("readxl")
+install.packages("writexl")
+install.packages("ggplot2")
+install.packages("ggpubr")
+install.packages("dplyr")
+install.packages("MASS")
+install.packages("ggrepel")
+install.packages("e1071")
+install.packages("factoextra")
+install.packages("ggdendro")
+install.packages("reshape", type="source")
+install.packages("reshape2", type="source")
+install.packages("ggroups")
+install.packages("Rmisc")
+install.packages("ggpubr")
+install.packages("stringr")
+install.packages("broom")
+install.packages("nlstools")
+install.packages("dplyr")
+#install.packages("plyr")            # Install & load plyr package
+install.packages("tidyr")
+install.packages("tidyverse")
+installed.packages("matrixStats")
+
+library(readxl)
+library(writexl)
+library(ggplot2)
+library(ggpubr)
+library(dplyr)
+library(broom)
+library(MASS)     # for lda()
+library(ggrepel)
+library(RColorBrewer)
+library(tidyr) 
+library(e1071)
+library(reshape)
+library(reshape2)
+library(ggroups)
+library(Rmisc)
+library(ggpubr)
+library(stringr)
+library(broom) #for tidy function, click broom 0.7.8
+library(nlstools)
+library(dplyr) #click #dplyr 1.0.7
+library(tidyr) #for gather function, click tidyr 1.1.3
+library(tidyverse)
+library(matrixStats) #for rowvars click matrxistats 0.59.0
+
+getwd()
+#setwd("/Users/farid_aththar/Library/CloudStorage/OneDrive-Personal/BRIN/Research/Nila_Salin_DKPJabar/RP/Data_RP_Nila_2026")
+#setwd("/Users/farid_aththar/Library/CloudStorage/OneDrive-Personal/BRIN/Research/Nila_Salin_DKPJabar/RP/Data_RP_Nila_2026")
+#dir.exists("/Users/farid_aththar/Library/CloudStorage/OneDrive-Personal/BRIN/Research/Nila_Salin_DKPJabar/RP/Data_RP_Nila_2026")
+setwd("/Users/farid_aththar/Library/CloudStorage/OneDrive-Personal/BRIN/Research/blup")
+
+# Load data
+fw_t1    <- read_excel("data_tilapia_karawang.xlsx", sheet = "fw_t1")
+fw_t1$fish_id <- sprintf("%.0f", fw_t1$fish_id) #complete fish_id char
+fw_t1$w_1 <- as.numeric(fw_t1$w_1)
+fw_t1$tl_1 <- as.numeric(fw_t1$tl_1)
+fw_t1$sl_1 <- as.numeric(fw_t1$sl_1)
+
+fw_t2    <- read_excel("data_tilapia_karawang.xlsx", sheet = "fw_t2")
+fw_t2$fish_id <- sprintf("%.0f", fw_t2$fish_id) #complete fish_id char
+fw_t2$w_2 <- as.numeric(fw_t2$w_2)
+fw_t2$tl_2 <- as.numeric(fw_t2$tl_2)
+fw_t2$sl_2 <- as.numeric(fw_t2$sl_2)
+
+fw_t3    <- read_excel("data_tilapia_karawang.xlsx", sheet = "fw_t3")
+fw_t3$fish_id <- sprintf("%.0f", fw_t3$fish_id) #complete fish_id char
+fw_t3$w_3 <- as.numeric(fw_t3$w_3)
+fw_t3$tl_3 <- as.numeric(fw_t3$tl_3)
+fw_t3$sl_3 <- as.numeric(fw_t3$sl_3)
+
+fw_t4    <- read_excel("data_tilapia_karawang.xlsx", sheet = "fw_t4")
+fw_t4$fish_id <- sprintf("%.0f", fw_t4$fish_id) #complete fish_id char
+fw_t4$w_4 <- as.numeric(fw_t4$w_4)
+fw_t4$tl_4 <- as.numeric(fw_t4$tl_4)
+fw_t4$sl_4 <- as.numeric(fw_t4$sl_4)
